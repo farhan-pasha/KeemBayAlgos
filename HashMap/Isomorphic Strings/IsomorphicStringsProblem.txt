@@ -33,10 +33,10 @@ First thing that comes to mind is using Hashmap. Two hashmap or 1 hashmap+1hashs
 Better way: 
 Logic is to maintain a relationship between two chars from s and t using thier indexes
 s = |a|     ==>   |  |   | 67  |   |   |    |    |  sArr (array of size 256)
-                   0  ...  65   ...        255
+                   0  ...  65   ...          255
     
-t = |c|     ==>   |  |   | 67  |   | 67 |    |    |  tArr (array of size 256)
-                   0  ...  65   ...  67      255
+t = |c|     ==>   |  |   |  |   | 67 |    |    |  tArr (array of size 256)
+                   0  ...         67        255
 
 Now suppose next char in s and t are c and d respectively, 
 we should compare there values if either of the values present in the index of s[c] and s[d] are not zero, 
