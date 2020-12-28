@@ -21,7 +21,7 @@ Output: true
 Note:
 You may assume both s and t have the same length.
 
-
+Link: https://leetcode.com/problems/isomorphic-strings/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
