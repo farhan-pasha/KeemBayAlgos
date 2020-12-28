@@ -1,0 +1,54 @@
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------PROBLEM-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+Given two strings s and t, determine if they are isomorphic.
+
+Two strings are isomorphic if the characters in s can be replaced to get t.
+
+All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.
+
+Example 1:
+
+Input: s = "egg", t = "add"
+Output: true
+Example 2:
+
+Input: s = "foo", t = "bar"
+Output: false
+Example 3:
+
+Input: s = "paper", t = "title"
+Output: true
+Note:
+You may assume both s and t have the same length.
+
+
+
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+
+First thing that comes to mind is using Hashmap. Two hashmap or 1 hashmap+1hashset can be used to remember the relationships between chars.
+
+
+
+Better way: 
+Logic is to maintain a relationship between two chars from s and t using thier indexes
+s = |a|     ==>   |  |   | 67  |   |   |    |    |  sArr (array of size 256)
+                   0  ...  65   ...        255
+    
+t = |c|     ==>   |  |   | 67  |   | 67 |    |    |  tArr (array of size 256)
+                   0  ...  65   ...  67      255
+
+Now suppose next char in s and t are c and d respectively, 
+we should compare there values if either of the values present in the index of s[c] and s[d] are not zero, 
+which means it was accessed before and therefore should have values other than zero! 
+If values obtained on those two indexes are not zero, we should compare them with each other and they should be equal otherwise not isomorphic.
+
+if (sm[sc] == 0 && tm[tc] == 0) { //If both the index didn't have any value in them        
+	sm[sc] = tc;  //Any value can be saved to these index like tc/sc/R-> any value which is distinct!
+        tm[tc] = tc;
+} else if (sm[sc] != tm[tc]) { //Else one of them was accessed before and therefore needs to be checked to see if the values in them are same or not
+        return false;
+}
+
+Time Complexity: O(n)
+Space Complexity: O(1)
