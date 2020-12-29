@@ -1,3 +1,6 @@
+//Time Complexity: O(log(x, bound) * log(y, bound)), where log(a, b) is log base a of b
+//Space Complexity: O(log(x, bound) * log(y, bound)), where log(a, b) is log base a of b
+
 class Solution {
     public List<Integer> powerfulIntegers(int x, int y, int bound) {
         double imax=0,jmax=0;

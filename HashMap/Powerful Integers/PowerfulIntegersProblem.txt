@@ -66,3 +66,7 @@ Note 2: if x = 1, that is log10 1 => Infinity! So we can see a very large value 
 If x=1, anyways in the equation - x^i + y^j, it will become 1 to the power some number which will be 1, hence equation - x^i + y^j will become => 1 + y^j.
 
 Hence we can just say, imax = 1!!
+
+Time Complexity: O(log(x, bound) * log(y, bound)), where log(a, b) is log base a of b
+Space Complexity: O(log(x, bound) * log(y, bound)), where log(a, b) is log base a of b
+

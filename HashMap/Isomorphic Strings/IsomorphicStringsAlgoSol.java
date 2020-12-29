@@ -1,3 +1,6 @@
+//Time Complexity: O(n)
+//Space Complexity: O(1)
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         char[] sArr = s.toCharArray(); //As Strings are immutable in java ;)
@@ -28,8 +31,11 @@ class Solution {
 
 
 
+//Time Complexity: O(n)
+//Space Complexity: O(n)
 
 /*
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         HashMap<Character,Character> map1 = new HashMap<>();
