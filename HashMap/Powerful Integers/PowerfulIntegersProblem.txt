@@ -38,8 +38,9 @@ Link: https://leetcode.com/problems/powerful-integers/
 
 
 Background : Simplify log5(25).
-The Relationship says that, since log5(25) = y, then 5 y = 25. This means that the given log log5(25) is equal to the power y that, when put on 5, turns 5 into 25.
-The required power is 2, because 52 = 25. Then 52 = 5 y = 25, so:
+The Relationship says that, since log5(25) = y, then 5^y = 25. This means that the given log log5(25) is equal to the power y that, 
+when put on 5, turns 5 into 25.
+The required power is 2, because 5^2 = 25. Then 5^2 = 5^y = 25, so:
 
 log5(25) = 2.
 
