@@ -1,3 +1,6 @@
+Time Complexity: O(n)
+Space Complexity: O(n)
+
 class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {        
         HashMap<Integer,Integer> hs = new HashMap<>();
