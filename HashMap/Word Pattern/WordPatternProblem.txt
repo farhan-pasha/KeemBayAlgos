@@ -1,0 +1,57 @@
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------PROBLEM-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+Given a pattern and a string s, find if s follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
+
+ 
+
+Example 1:
+
+Input: pattern = "abba", s = "dog cat cat dog"
+Output: true
+Example 2:
+
+Input: pattern = "abba", s = "dog cat cat fish"
+Output: false
+Example 3:
+
+Input: pattern = "aaaa", s = "dog cat cat dog"
+Output: false
+Example 4:
+
+Input: pattern = "abba", s = "dog dog dog dog"
+Output: false
+ 
+
+Constraints:
+
+1 <= pattern.length <= 300
+pattern contains only lower-case English letters.
+1 <= s.length <= 3000
+s contains only lower-case English letters and spaces ' '.
+s does not contain any leading or trailing spaces.
+All the words in s are separated by a single space.
+
+Link: https://leetcode.com/problems/word-pattern/
+
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+First thing that comes to mind is that we can use 1 HashMap and solve this problem, but there are test cases where just having one HashMap will fail.
+For eg: 
+"abba"
+"dog dog dog dog"
+
+If we have just one hashmap, we will have differnt keys but the value is repeating and this problem needs 1:1 unique mapping. 
+Hence we can solve this my having 1 more hashMap which will take care of replationships between words and letters.
+The best way will be to have HashMap + HashSet. The logic will be to check if we have seen the 'value' under question before? 
+This check can be added just before putting a new key-value pair in hashmap.
+if (hashset contains this value){
+	return false;
+} else {
+hashmap.put(key,value
+}
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
