@@ -1,0 +1,55 @@
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------PROBLEM-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+The set S originally contains numbers from 1 to n. But unfortunately, due to the data error, 
+one of the numbers in the set got duplicated to another number in the set, which results in repetition of one number and loss of another number.
+
+Given an array nums representing the data status of this set after the error. 
+Your task is to firstly find the number occurs twice and then find the number that is missing. Return them in the form of an array.
+
+Example 1:
+Input: nums = [1,2,2,4]
+Output: [2,3]
+Note:
+The given array size will in the range [2, 10000].
+The given array's numbers won't have any order.
+
+Link: https://leetcode.com/problems/set-mismatch/
+
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+For Solution 1:
+       (1 ^ 2 ^ 3 ^ .. ^ n) ^ (1 ^ 2 ^ 3 ^ .. ^ n) = 0
+Same way,(1 ^ 2 ^ 3 ^ .. ^ n) ^ (1 ^ 2 ^ 2 ^ .. n)  = 3 ^ 2 (other will get cancelled), suppose it to be missing->3 and repeat->2
+Let c = missing ^ repeat, if we can find 'repeat' which appears 2 times in the original array, 'missing' can be easily calculated by missing= c ^ repeat.
+
+
+logic here is, change the sign of the number on the index of nums[i] -1. If you encounter later that the sign was changed earlier, which means we already saw somewhere that number.
+Note, always use absolute value when accessing number in nums[i] -1 index as we do not want sign to affect our operation.
+            eg: nums =  3,2,2
+                when i =0:
+                    Math.abs(nums[i])-1 =>   3-1  => 2
+                    nums[Math.abs(nums[i])-1] => 2 (value at index 3 in nums)
+                    as the above is greater than 0, else part will be executed and now nums will be nums = 3,2,-2    
+                 when i =1:
+                    Math.abs(nums[i])-1 =>   2-1  => 1
+                    nums[Math.abs(nums[i])-1] => 2 (value at index 2 in nums)
+                    as the above is greater than 0, else part will be executed and now nums will be nums = 3,-2,-2
+                    
+                 when i =2 (last):
+                    Math.abs(nums[i])-1 =>   2-1  => 1
+                    nums[Math.abs(nums[i])-1] => 2 (value at index 2 in nums)
+                    as the above is less than 0, if part will be executed and repeat will be repeat = 2 
+
+
+
+
+For Solution 2:
+The logic here is to create a new array of size nums+1 (Initially assigned value - 0).
+suppose nums.length = 5, array = [0,0,0,0,0,0]
+			Index ->  0 1 2 3 4 5
+Add +1 to the value residing at nums[i]th index of the array. Suppose, nums ==> [1,2,2,4]
+array will be [0,1,2,0,1].
+Now apply a for loop, 1->array.length and get the index where the values are 0 and 2. This will give us our missing and repeat values.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
