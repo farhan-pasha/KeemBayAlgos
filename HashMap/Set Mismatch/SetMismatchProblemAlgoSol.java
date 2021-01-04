@@ -4,14 +4,18 @@
 class Solution {
     public int[] findErrorNums(int[] nums) {
 	//Solution 1:
-        int missing = 0,repeat=0;
+        int missing = 0,repeat=0,c =0;
         for (int i =0;i<nums.length;i++){
-            missing ^=Math.abs(nums[i])^(i+1); //used in calculating c
-            if(nums[Math.abs(nums[i])-1]<0)repeat=Math.abs(nums[i]);   //used in calculating repeat
-            else nums[Math.abs(nums[i])-1] = -nums[Math.abs(nums[i])-1];//used in calculating repeat
+            c ^= Math.abs(nums[i])^(i+1); 
+            if(nums[Math.abs(nums[i])-1] < 0) { 
+		repeat=Math.abs(nums[i]);   
+	    }
+            else {
+		nums[Math.abs(nums[i])-1] = -nums[Math.abs(nums[i])-1];
+	    }
         }
         
-        missing ^= repeat;
+        missing = c ^ repeat;
 
         return new int[]{repeat,missing}; 
 
