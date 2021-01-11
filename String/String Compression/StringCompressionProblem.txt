@@ -49,22 +49,32 @@ Link: https://leetcode.com/problems/string-compression/
 
 
 The compressions algo specified basically mentions to do an in-place compression where chars if found repeating,
-replace all the repeating chars with the number of repeatition. 
-Note: AS we know each elem in char array can only store 1 digit. SO suppose if we have repeatition of 'a' 10 time, 
+we need to replace all the repeating chars with the number of repeatition. 
+Note: AS we know each elem in char array can only store 1 digit, we need to take care of multi-digit repeatition number.
+So suppose if we have repeatition of 'a' 10 times, 
 we need to modify the array as ["1","0"]
 
 index=0;
 Used 2 pointers i and j, i is incremented everytime when chars[i] == chars[j].
 If the above is not true, ie,chars[i] != chars[j], we need to do 2 things:-
 
-1. we then modify the elem of array at index (0) equal to char[j]. 
+1. we then modify the elem of array at 'index' equal to char[j]. 
 We also need to increment the 'index', so that it will now point to next elem.
 
 2. if i-j>1, 
 we convert the diff to string, run a for loop by converting this string to charArray to store the repeatition.
-As we noted earlier that array of char will only save 1 digit at a time.
+As we noted earlier that array of char will only save 1 digit at a time. Hence we run a for loop in this case.
 
+Note: We also need to see if our pointer has reached the end of char array or not. 
+for(int i=0;i<chars.length+1;i++){//Let the pointer go past the length,
+	if (i<chars.length && chars[i] == chars[j]) { //check here if thats the case, do not do 'continue' 
+		continue;
+	}
 
+Why the above?
+Consider : ["a","a","b","b","c","c","c"]
+		             j           i
+	     0   1   2   3   4   5   6   7         Now i-j will have the right value which is 7-4,3	     
 
 Time Complexity: O(n)
 Space Complexity:O(1)
