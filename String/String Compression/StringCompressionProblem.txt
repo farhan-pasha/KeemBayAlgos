@@ -47,6 +47,25 @@ Link: https://leetcode.com/problems/string-compression/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
-Time Complexity: 
-Space Complexity: 
+
+The compressions algo specified basically mentions to do an in-place compression where chars if found repeating,
+replace all the repeating chars with the number of repeatition. 
+Note: AS we know each elem in char array can only store 1 digit. SO suppose if we have repeatition of 'a' 10 time, 
+we need to modify the array as ["1","0"]
+
+index=0;
+Used 2 pointers i and j, i is incremented everytime when chars[i] == chars[j].
+If the above is not true, ie,chars[i] != chars[j], we need to do 2 things:-
+
+1. we then modify the elem of array at index (0) equal to char[j]. 
+We also need to increment the 'index', so that it will now point to next elem.
+
+2. if i-j>1, 
+we convert the diff to string, run a for loop by converting this string to charArray to store the repeatition.
+As we noted earlier that array of char will only save 1 digit at a time.
+
+
+
+Time Complexity: O(n)
+Space Complexity:O(1)
 
