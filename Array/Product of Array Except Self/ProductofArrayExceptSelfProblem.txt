@@ -20,7 +20,11 @@ Link: https://leetcode.com/problems/product-of-array-except-self/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
-
+        //ARR = {11,22,33,44}
+        
+        //leftToRight{1,          11*1,    22*11*1,  33*22*11*1}
+        //rightoLeft{22*33*44*1, 33*44*1,    44*1,       1}
+        
 
 Time Complexity: O(n)
 Space Complexity: O(n)
