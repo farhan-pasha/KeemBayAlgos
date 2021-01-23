@@ -27,6 +27,9 @@ Link: https://leetcode.com/problems/non-decreasing-array/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
+TODO:
+319/334 cases passing.
+Cases like [3,4,2,3] are failing.
         
 
 Time Complexity: O(n)
