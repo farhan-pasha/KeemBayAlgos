@@ -20,11 +20,32 @@ Link: https://leetcode.com/problems/product-of-array-except-self/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
-        //ARR = {11,22,33,44}
+TODO: Add a better description for the following O(n)solution
+O(n) Solution gist:
+//ARR = {11,22,33,44}
+//leftToRight{     1,             11*1,    22*11*1,  33*22*11*1   }
+//rightoLeft{   22*33*44*1,     33*44*1,     44*1,       1         }
         
-        //leftToRight{1,          11*1,    22*11*1,  33*22*11*1}
-        //rightoLeft{22*33*44*1, 33*44*1,    44*1,       1}
-        
+Also, O(n^2) solution:
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int retArray[] = new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            int prod = 1;
+            for (int j=0;j<nums.length;j++){
+                 if (j!=i) {
+                     prod *= nums[j];
+                 }
+            }
+            retArray[i]=prod; 
+        }
+        return retArray;
+    }
+}
+
+
+
+
 
 Time Complexity: O(n)
 Space Complexity: O(n)
