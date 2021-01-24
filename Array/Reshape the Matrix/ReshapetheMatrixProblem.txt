@@ -40,6 +40,11 @@ Link: https://leetcode.com/problems/reshape-the-matrix/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
+The logic:
+Convert the input matrix to 1D array and keep pushing each elements based on the row and columns provided in the input.
+Also, check if it is legal to reshape that matrix, if not, as question mentions, return the old input matrix.\
+To check if it is legal to reshape that matrix: the product of rows and columns of inputs matrix 
+should match the products of r and c (inputs).
 
 Time Complexity: O(n)
 Space Complexity: O(n)
