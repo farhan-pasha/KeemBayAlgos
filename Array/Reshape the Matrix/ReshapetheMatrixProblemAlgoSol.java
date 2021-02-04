@@ -1,5 +1,5 @@
-//Time Complexity: O(n)
-//Space Complexity: O(n)
+//Time Complexity: O(r*c) if r*c > nums's rows*nums's column
+//Space Complexity: O(r*c)
 
 class Solution {
     public int[][] matrixReshape(int[][] nums, int r, int c) {
