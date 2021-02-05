@@ -40,6 +40,6 @@ Link: https://leetcode.com/problems/number-of-islands/
 
 Use DFS then flip to 'O' after visiting! Return 1 after every island (dfs run).     
 
-Time Complexity: O()
-Space Complexity:O()
+//Time Complexity: O(n*m*size of largest island)
+//Space Complexity:O(1)
 

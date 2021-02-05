@@ -1,5 +1,5 @@
-//Time Complexity: O()
-//Space Complexity:O()
+//Time Complexity: O(n*m*size of largest island)
+//Space Complexity:O(1)
 
 class Solution {
     public int numIslands(char[][] grid) {
