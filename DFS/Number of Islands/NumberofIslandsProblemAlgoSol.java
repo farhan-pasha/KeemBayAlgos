@@ -1,5 +1,5 @@
 //Time Complexity: O(n*m*size of largest island)
-//Space Complexity:O(1)
+//Space Complexity:O(here space cost is recursive stack's size (n*m))
 
 class Solution {
     public int numIslands(char[][] grid) {

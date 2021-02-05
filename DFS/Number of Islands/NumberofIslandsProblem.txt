@@ -41,5 +41,5 @@ Link: https://leetcode.com/problems/number-of-islands/
 Use DFS then flip to 'O' after visiting! Return 1 after every island (dfs run).     
 
 //Time Complexity: O(n*m*size of largest island)
-//Space Complexity:O(1)
+//Space Complexity:O(here space cost is recursive stack's size (n*m))
 
