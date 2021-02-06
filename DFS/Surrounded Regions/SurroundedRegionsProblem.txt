@@ -28,8 +28,19 @@ Link: https://leetcode.com/problems/surrounded-regions/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
+The logic here is look this problem as a flood-fill situation. Corner 'O' is like an entry point for water. 'X' is land.
+Every 'O' connected to edge 'O's should be untouched. After flood, the lakes formed will get DRY!
+This is why you will flip the 'O' to 'X' where 'O's are surrounded by 'X's.
 
-    
+Based on the above info, we can check 'O's at edges and apply dfs to get all the connected 'O's.
+We need to mark them visited, we can edit their values from 'O's to someother value - for eg 'n'.
+Here for our understanding, lets assume 'n' stands for 'not change'. Other 'O's (Lakes) we need to change it to 'X'.
+
+Note: As the number of rows and columns can be different, we need 2 for loops for getting all the edges.
+
+Later we need to flip all the 'n's to 'O's and 'O's (Lakes) to X.
+We need to take care what to do first^, if we do 'n's to 'O's first then it can create problem for 'O's (Lakes) to X 
+(As every ocurrence of 'O') will be taken as lakes. Hence when flipping, flip the lakes to X first then do 'n's to 'O's 
 
 //Time Complexity: O()
 //Space Complexity:O()
