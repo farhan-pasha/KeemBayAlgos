@@ -42,6 +42,6 @@ Later we need to flip all the 'n's to 'O's and 'O's (Lakes) to X.
 We need to take care what to do first^, if we do 'n's to 'O's first then it can create problem for 'O's (Lakes) to X 
 (As every ocurrence of 'O') will be taken as lakes. Hence when flipping, flip the lakes to X first then do 'n's to 'O's 
 
-//Time Complexity: O()
-//Space Complexity:O()
+//Time Complexity: O(m*max number of connected '0'(which can be n*m - dfs)...if m > n else n*max number of connected '0'(which can be n*m-dfs))
+//Space Complexity:O(1)
 

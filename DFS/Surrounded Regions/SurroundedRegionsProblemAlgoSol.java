@@ -1,5 +1,5 @@
-//Time Complexity: O()
-//Space Complexity:O()
+//Time Complexity: O(m*max number of connected '0'(which can be n*m - dfs)...if m > n else n*max number of connected '0'(which can be n*m-dfs))
+//Space Complexity:O(1)
 
 class Solution {
     public void solve(char[][] board) {
