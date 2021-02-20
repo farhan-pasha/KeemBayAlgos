@@ -26,7 +26,14 @@ Link: https://leetcode.com/problems/max-area-of-island/
 
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
-
+//Time Complexity: Originally I was thinking the following (which is true) - O(R*C*max number of connected '1'(which can be R*C again - dfs)
+But remember? DFS' time complexity is proportional to the total number of vertexes and edges of the graph visited. 
+In that case, there are N*M vertexes and slightly less than 4*N*M edges, their sum is still O(N*M).
+Why so: because we process each edge exactly once in each direction. 
+Situation where recursive call is immediately terminated does not matter as time spent for that call can be accounted for on the call site; 
+and there is at most once call for each directed edge, hence O(N*M).
+//Space Complexity:Space complexity: O(n*m), the space used by seen to keep track of visited squares, 
+and the space used by the call stack during our recursion.
 
 
 
