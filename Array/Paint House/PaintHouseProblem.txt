@@ -1,0 +1,40 @@
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------PROBLEM-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. 
+The cost of painting each house with a certain color is different. 
+You have to paint all the houses such that no two adjacent houses have the same color.
+
+The cost of painting each house with a certain color is represented by a n x 3 cost matrix. 
+For example, costs[0][0] is the cost of painting house 0 with color red; 
+costs[1][2] is the cost of painting house 1 with color green, and so on... 
+Find the minimum cost to paint all houses.
+
+Link: https://leetcode.com/problems/paint-house/
+
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x----------LOGIC/PSUEDO-CODE/Scratchpad-------x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+The logic: Suppose on the current iteration(i), the current house we chose is of red color, 
+which means in the previous iteration (i-1), we wouldve only selected blue/green. 
+We need to somehow track the current min price in the current iteration, we can do this by calculating the 
+sum of current house + other two houses in the previous iteration.
+For eg:
+{17,2,17},
+{16,16,5},
+{14,3,19}
+
+If we choose house number 2(cost[1][]) to be red colored-> (which means in the previous iteration (i-1), we wouldve only selected blue/green. )
+Obviously in the prev iteration  we will try to select the min of cost of painting the house with blue/green.
+cost of second house to be painted with red ie (cost[1][0]) + min(cost[1-1][1],cost[1-1][2])
+16+min(2,17) = 18
+If we choose the second house to be painted with blue:
+16+min(17,17) = 33
+If we choose the second house to be painted with blue:
+5+min(17,2) = 7
+
+Likeiwse in every iteration we can store the old values and maintain a history!
+If we want to later select in a particular iteration which house we selected?
+We can always backtrack that using min values in that iteration!
+
+Time Complexity: O(n*3)~O(n)
+Space Complexity: O(1)
+
